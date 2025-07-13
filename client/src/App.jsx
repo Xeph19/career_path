@@ -1,35 +1,56 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
-import './App.css'
+import CareerCard from "./components/CareerCard";
+
+const careers = [
+  {
+    title: "Software Development",
+    description:
+      "Design, develop, and maintain software applications across various platforms and industries.",
+    tags: ["JavaScript", "Python", "Java"],
+  },
+  {
+    title: "Cybersecurity",
+    description:
+      "Protect systems, networks, and data from digital attacks and unauthorized access.",
+    tags: ["Ethical Hacking", "Network Security"],
+  },
+  {
+    title: "Data Science",
+    description:
+      "Extract insights from complex data sets to drive business decisions and strategy.",
+    tags: ["Python", "SQL"],
+  },
+  {
+    title: "Cloud Computing",
+    description:"Design, implement, and manage cloud-based solutions for businesses and organizations.",
+    tags: ["AWS","Azure"],
+  },
+  {
+    title: "AI/ML Engineering",
+    description: "Build intelligent systems and algorithms that can learn from and make decisions based on data.",
+    tags: ["Python","TensorFlow"],
+  },
+  {
+    title:"UI/UX Design",
+    description: "Create intuitive and visually appealing user interfaces and experiences for digital products.",
+    tags: ["Figma","Adobe XD"]
+  }
+];
+
+
 
 function App() {
-  const [count, setCount] = useState(0)
-
   return (
-    <>
-      <div>
-        <a href="https://vite.dev" target="_blank">
-          <img src={viteLogo} className="logo" alt="Vite logo" />
-        </a>
-        <a href="https://react.dev" target="_blank">
-          <img src={reactLogo} className="logo react" alt="React logo" />
-        </a>
-      </div>
-      <h1>Vite + React</h1>
-      <div className="card">
-        <button onClick={() => setCount((count) => count + 1)}>
-          count is {count}
-        </button>
-        <p>
-          Edit <code>src/App.jsx</code> and save to test HMR
-        </p>
-      </div>
-      <p className="read-the-docs">
-        Click on the Vite and React logos to learn more
-      </p>
-    </>
-  )
+    <div className="career-list">
+      {careers.map((career, index) => (
+        <CareerCard
+          key={index}
+          title={career.title}
+          description={career.description}
+          tags={career.tags}
+        />
+      ))}
+    </div>
+  );
 }
 
-export default App
+export default App;
