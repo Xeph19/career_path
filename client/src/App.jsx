@@ -1,5 +1,5 @@
 import CareerCard from "./components/CareerCard";
-
+import SigninForm from "./components/SigninForm";
 const careers = [
   {
     title: "Software Development",
@@ -38,8 +38,10 @@ const careers = [
 
 
 
+
 function App() {
   return (
+    <>
     <div className="career-list">
       {careers.map((career, index) => (
         <CareerCard
@@ -50,7 +52,30 @@ function App() {
         />
       ))}
     </div>
+    <SigninForm
+    title="Welcome to Dalan"
+     para="If You’re Lost in the Code, We’ll Help You Find the Road"
+     btn="LOGIN"
+    text="Don’t have an account yet?"
+    Fields={[
+    { label: "Email", name: "email", type: "email" },
+    { label: "Password", name: "password", type: "password" },
+  ]}
+/>
+  <SigninForm 
+   title="Create New Account"
+   para="If You’re Lost in the Code, We’ll Help You Find the Road"
+   btn="Sign Up"
+   text="Already have an account?"
+   Fields={[
+    { label: "Full Name", name: "name", type: "text" },
+    { label: "Email", name: "email", type: "email" },
+    { label: "Password", name: "password", type: "password" }
+   ]}
+  />
+    </>
   );
+  
 }
 
 export default App;
