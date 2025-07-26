@@ -1,5 +1,46 @@
 import CareerCard from "./components/CareerCard";
-import SigninForm from "./components/SigninForm";
+import LoginForm from "./components/LoginForm";
+function App() {
+  return (
+    <>
+    <div className="career-list">
+      {careers.map((career, index) => (
+        <CareerCard
+          key={index}
+          title={career.title}
+          description={career.description}
+          tags={career.tags}
+        />
+      ))}
+    </div>
+    <LoginForm 
+        showEmailField={false}
+        title="Welcome to Dalan"
+        para="If You’re Lost in the Code, We’ll Help You Find the Road"
+        btn="Login"
+        text="Don’t have an account yet? Get started"
+        Nameplaceholder="Enter your Username"
+        Passwordplaceholder="Enter your Password"
+      />
+
+      <LoginForm 
+        showEmailField={true}
+        title="Create New Account"
+        para="If You’re Lost in the Code, We’ll Help You Find the Road"
+        btn="Sign up"
+        text="Already have an account? Login Now"
+        Nameplaceholder="Enter your Username"
+        Emailplaceholder="Enter your Email"
+        Passwordplaceholder="Enter your Password"
+      />
+
+
+    </>
+  );
+  
+}
+export default App;
+
 const careers = [
   {
     title: "Software Development",
@@ -36,46 +77,3 @@ const careers = [
   }
 ];
 
-
-
-
-function App() {
-  return (
-    <>
-    <div className="career-list">
-      {careers.map((career, index) => (
-        <CareerCard
-          key={index}
-          title={career.title}
-          description={career.description}
-          tags={career.tags}
-        />
-      ))}
-    </div>
-    <SigninForm
-    title="Welcome to Dalan"
-     para="If You’re Lost in the Code, We’ll Help You Find the Road"
-     btn="LOGIN"
-    text="Don’t have an account yet?"
-    Fields={[
-    { label: "Email", name: "email", type: "email" },
-    { label: "Password", name: "password", type: "password" },
-  ]}
-/>
-  <SigninForm 
-   title="Create New Account"
-   para="If You’re Lost in the Code, We’ll Help You Find the Road"
-   btn="Sign Up"
-   text="Already have an account?"
-   Fields={[
-    { label: "Full Name", name: "name", type: "text" },
-    { label: "Email", name: "email", type: "email" },
-    { label: "Password", name: "password", type: "password" }
-   ]}
-  />
-    </>
-  );
-  
-}
-
-export default App;
