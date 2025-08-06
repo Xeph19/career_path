@@ -152,7 +152,7 @@ function ResponsiveAppBar() {
             </Menu>
           </Box>
         </Toolbar>
-      </Container>
+      </Container>  
     </AppBar>
   );
 }

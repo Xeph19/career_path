@@ -1,12 +1,12 @@
 import LandingPage from './landingpage';
 import picture1 from './images/picture1.png';
-import ResponsiveAppBar from './navbar';
+import Navigation from './Navigation';
 import BasicButtons from './components/Button';
 
 function App() {
   return (
     <div>
-     <ResponsiveAppBar />
+     <Navigation />
       <LandingPage />
       <BasicButtons />
       <img src={picture1} className="right-side" alt="pictures" />
