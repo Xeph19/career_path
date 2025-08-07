@@ -1,0 +1,6 @@
+@import "tailwindcss";
+@plugin "daisyui";
+
+.blue-clr {
+    color: #4B50FF;
+}
